@@ -19,7 +19,7 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
+    "client": [
       "com.github.mikndesu.spotify_integration.SpotifyIntegrationMod"
     ]
   },
