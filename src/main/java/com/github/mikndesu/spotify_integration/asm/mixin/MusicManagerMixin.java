@@ -13,6 +13,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
+import com.github.mikndesu.spotify_integration.SpotifyIntegrationMod;
+
 @Mixin(MusicManager.class)
 public class MusicManagerMixin {
     @Final
@@ -32,7 +34,7 @@ public class MusicManagerMixin {
     @Overwrite
     public void tick() {
         MusicManager musicManager = (MusicManager) (Object) this;
-        Music music = new Music(new SoundEvent(new ResourceLocation("spotify_integration","sample")), 20, 600, true);
+        Music music = new Music(new SoundEvent(new ResourceLocation(SpotifyIntegrationMod.MODID,"sample")), 20, 600, true);
         if (currentMusic != null) {
             if (!music.getEvent().getLocation().equals(currentMusic.getLocation()) && music.replaceCurrentMusic()) {
                 minecraft.getSoundManager().stop(currentMusic);
