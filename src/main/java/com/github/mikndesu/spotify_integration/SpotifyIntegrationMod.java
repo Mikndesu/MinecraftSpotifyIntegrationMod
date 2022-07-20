@@ -25,6 +25,8 @@ import net.fabricmc.api.ClientModInitializer;
 
 public class SpotifyIntegrationMod implements ClientModInitializer {
 
+    public static final String MODID = "spotify_integration";
+
     @Override
     public void onInitializeClient() {
     }
