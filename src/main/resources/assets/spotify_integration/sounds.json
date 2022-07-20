@@ -1,0 +1,11 @@
+{
+    "sample": {
+        "category": "master",
+        "sounds": [
+            {
+                "name": "spotify_integration:sample",
+                "stream": false
+            }
+        ]
+    }
+}
