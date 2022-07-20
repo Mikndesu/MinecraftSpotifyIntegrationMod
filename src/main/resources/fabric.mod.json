@@ -1,25 +1,26 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "spotify_integration",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Spotify Integration Mod",
+  "description": "This mod replaces the Minecraft bgm with Spotify(Premium User Only)",
   "authors": [
-    "Me!"
+    "Mikndesu"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://mikndesu.github.io/mikndesu-website/",
+    "issues": "https://github.com/Mikndesu/MinecraftSpotifyIntegrationMod/issues",
+    "sources": "https://github.com/Mikndesu/MinecraftSpotifyIntegrationMod"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT License",
+  "icon": "assets/spotify_integration/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "com.github.mikndesu.spotify_integration.SpotifyIntegrationMod"
     ]
   },
   "mixins": [
