@@ -3,7 +3,9 @@ package com.github.mikndesu.spotify_integration.asm.mixin;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.client.sounds.MusicManager;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Music;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import org.spongepowered.asm.mixin.Final;
@@ -30,7 +32,7 @@ public class MusicManagerMixin {
     @Overwrite
     public void tick() {
         MusicManager musicManager = (MusicManager) (Object) this;
-        Music music = minecraft.getSituationalMusic();
+        Music music = new Music(new SoundEvent(new ResourceLocation("spotify_integration","sample")), 20, 600, true);
         if (currentMusic != null) {
             if (!music.getEvent().getLocation().equals(currentMusic.getLocation()) && music.replaceCurrentMusic()) {
                 minecraft.getSoundManager().stop(currentMusic);
