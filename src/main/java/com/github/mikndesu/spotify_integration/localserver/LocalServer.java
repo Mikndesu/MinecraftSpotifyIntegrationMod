@@ -34,7 +34,10 @@ public class LocalServer {
         });
         return localServer;
     }
-    public static void stopServer() {
+    public void stopServer() {
         javalin.close();
+    }
+    public String getCode() {
+        return code[0];
     }
 }
