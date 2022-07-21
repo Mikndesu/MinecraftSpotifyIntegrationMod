@@ -1,9 +1,6 @@
-# Fabric Example Mod
+## Minecraft Spotify Integration Mod
+This mod is mainly focusing on providing smooth integration spotify player in-game.
 
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+## Acknowledgement
+This project uses libraries listed below.  
+https://github.com/spotify-web-api-java/spotify-web-api-java/
