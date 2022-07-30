@@ -23,6 +23,8 @@ package com.github.mikndesu.spotify_integration;
 
 
 import org.lwjgl.glfw.GLFW;
+
+import com.github.mikndesu.spotify_integration.client.screen.SpotifyScreen;
 import com.mojang.blaze3d.platform.InputConstants;
 
 import net.fabricmc.api.ClientModInitializer;
@@ -30,7 +32,6 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 
 public class SpotifyIntegrationMod implements ClientModInitializer {
 
@@ -43,12 +44,7 @@ public class SpotifyIntegrationMod implements ClientModInitializer {
         keyMapping = KeyBindingHelper.registerKeyBinding(new KeyMapping("key.spotify_integration.open_integration_menu", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_Y, "Spotify Integration Mod"));
         ClientTickEvents.END_CLIENT_TICK.register(client->{
             while(keyMapping.consumeClick()) {
-                if (minecraft.gameMode.isServerControlledInventory()) {
-                    minecraft.player.sendOpenInventory();
-                    continue;
-                }
-                minecraft.getTutorial().onOpenInventory();
-                minecraft.setScreen(new InventoryScreen(minecraft.player));
+                minecraft.setScreen(new SpotifyScreen(null,false));
             }
         });
     }
